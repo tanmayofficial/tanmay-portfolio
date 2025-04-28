@@ -1,115 +1,223 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Head from "next/head";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.js
-            </code>
-            .
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Head>
+        <title>Tanmay Paul | Portfolio</title>
+        <meta name="description" content="Tanmay Paul's Portfolio Website" />
+      </Head>
+
+      {/* Navbar */}
+      <nav className="flex justify-between items-center p-5 bg-gray-800">
+        <h1 className="text-xl font-bold">Tanmay Paul</h1>
+        <ul className="flex space-x-5">
+          <li>
+            <a href="#about" className="hover:text-gray-400">
+              About
+            </a>
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+          <li>
+            <a href="#skills" className="hover:text-gray-400">
+              Skills
+            </a>
           </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+          <li>
+            <a href="#projects" className="hover:text-gray-400">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:text-gray-400">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center h-screen text-center">
+        <h2 className="text-4xl font-bold">Hi, I'm Tanmay Paul</h2>
+        <p className="text-lg mt-4">Software Developer | React | Node.js</p>
+        <div className="mt-6 flex space-x-4">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+            href="https://github.com/tanmayofficial"
             target="_blank"
             rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            GitHub
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
+            href="https://www.linkedin.com/in/tanmaypaul95/"
             target="_blank"
             rel="noopener noreferrer"
+            className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
           >
-            Read our docs
+            LinkedIn
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="px-6 py-20 bg-gray-800">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6">About Me</h2>
+          <p className="text-lg leading-relaxed text-gray-300">
+            With over 5 years of total and over 2 years of experience as a
+            Software Developer, I have a strong background in website and
+            software development. I'm proficient in HTML, CSS, JavaScript,
+            React.js, Node.js, and familiar with Figma, Adobe Premiere Pro,
+            Adobe Photoshop, etc. I am passionate about building impactful
+            digital experiences and continuously learning new technologies.
+          </p>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="px-6 py-20 bg-gray-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-10">Skills</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              HTML
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              CSS
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              JavaScript
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              React.js
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              Node.js
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              Express.js
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              MongoDB
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              MySQL
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              Tailwind CSS
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              Bootstrap
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              Git
+            </div>
+            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
+              GitHub/GitLab
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="px-6 py-20 bg-gray-800">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-10">Projects</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            {/* Project 1: Bulkmatic Solutions */}
+            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
+              <h3 className="text-2xl font-semibold mb-4">
+                Bulkmatic Solutions
+              </h3>
+              <p className="text-gray-300 mb-4">
+                Spearheaded the development of a dynamic Planning Board & Admin
+                Dashboard for order and tankwash management. Used React.js,
+                Node.js, PostgreSQL, Kendo UI, Material UI, and more.
+              </p>
+              <span className="text-sm text-gray-400">Jan 2023 - Oct 2023</span>
+            </div>
+
+            {/* Project 2: Wine App */}
+            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
+              <h3 className="text-2xl font-semibold mb-4">Wine App</h3>
+              <p className="text-gray-300 mb-4">
+                Developed a robust Admin Dashboard for liquor/wine management
+                system. Managed functionalities for admins, distributors, and
+                suppliers using React.js, MongoDB, AWS, Material UI, and
+                Express.js.
+              </p>
+              <span className="text-sm text-gray-400">
+                Sept 2022 - Oct 2023
+              </span>
+            </div>
+
+            {/* Project 3: ClearedTalent */}
+            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
+              <h3 className="text-2xl font-semibold mb-4">ClearedTalent</h3>
+              <p className="text-gray-300 mb-4">
+                Contributed to a robust Admin Dashboard for a Recruitment
+                Organization at ClearedTalent. Managed functionalities for
+                customers, agencies, clients, and public-specific test cases,
+                ensuring an efficient user experience. Utilized a tech stack
+                including React.js, Mongoose, Azure Functions, MySQL, Sequelize,
+                Kendo UI, and more.
+              </p>
+              <span className="text-sm text-gray-400">
+                Sept 2022 - Oct 2023
+              </span>
+            </div>
+
+            {/* Project 4: Pathology Lab */}
+            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
+              <h3 className="text-2xl font-semibold mb-4">Pathology Lab</h3>
+              <p className="text-gray-300 mb-4">
+                Worked on the frontend development of a Pathology Lab
+                application. Built dynamic user interfaces using React.js,
+                React-Router-DOM, Context API, CSS3, Tailwind CSS, Material UI,
+                and other frontend libraries. Focused on creating a clean,
+                responsive, and user-friendly experience for lab management and
+                patient reports.
+              </p>
+              <span className="text-sm text-gray-400">Dec 2024 - Mar 2025</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="px-6 py-20 bg-gray-900">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-10">Contact Me</h2>
+          <p className="text-lg text-gray-300 mb-6">
+            Feel free to reach out if you want to collaborate or have any
+            questions!
+          </p>
+          <div className="flex justify-center space-x-6">
+            <a
+              href="mailto:tanmaypaulofficial@gmail.com"
+              className="px-6 py-2 bg-gray-800 rounded hover:bg-gray-700 transition"
+            >
+              Email Me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/tanmaypaul95/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-gray-800 rounded hover:bg-gray-700 transition"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/tanmayofficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-gray-800 rounded hover:bg-gray-700 transition"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
