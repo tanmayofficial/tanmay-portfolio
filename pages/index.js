@@ -1,11 +1,30 @@
+import Loader from "@/components/Loader";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="min-h-screen bg-gray-900 text-white"
+    >
+      <Loader />
+
+      {/* Head Section */}
       <Head>
-        <title>Tanmay Paul | Portfolio</title>
-        <meta name="description" content="Tanmay Paul's Portfolio Website" />
+        <title>Tanmay Paul | Software Developer Portfolio</title>
+        <meta
+          name="description"
+          content="Portfolio of Tanmay Paul, a skilled software developer specializing in React, Node.js, MongoDB, and more."
+        />
+        <meta
+          name="keywords"
+          content="Tanmay Paul, Software Developer, React Developer, Node.js Developer, Portfolio, Full Stack Developer"
+        />
+        <meta name="author" content="Tanmay Paul" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* Navbar */}
@@ -36,26 +55,44 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center">
-        <h2 className="text-4xl font-bold">Hi, I'm Tanmay Paul</h2>
-        <p className="text-lg mt-4">Software Developer | React | Node.js</p>
-        <div className="mt-6 flex space-x-4">
-          <a
-            href="https://github.com/tanmayofficial"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/tanmaypaul95/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
-          >
-            LinkedIn
-          </a>
+      <section className="flex flex-col md:flex-row items-center justify-center h-screen px-6 bg-gray-900 text-white">
+        {/* Image Section */}
+        <div className="mb-8 md:mb-0 md:mr-12">
+          <img
+            src="/meatclg.jpg"
+            alt="Tanmay Paul"
+            className="rounded-full w-48 h-48 object-contain border-4 border-gray-700 bg-white transform transition-transform duration-500 hover:scale-110"
+          />
+        </div>
+
+        {/* Text Section */}
+        <div className="text-center md:text-left">
+          <h2 className="text-4xl font-bold flex items-center justify-center md:justify-start">
+            Hi, I'm Tanmay Paul
+            <span className="ml-3 animate-wave">👋</span>
+          </h2>
+
+          <p className="text-lg mt-4">
+            Software Developer | React | Node | JavaScript
+          </p>
+          <div className="mt-6 flex justify-center md:justify-start space-x-4">
+            <a
+              href="https://github.com/tanmayofficial"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/tanmaypaul95/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
+            >
+              LinkedIn
+            </a>
+          </div>
         </div>
       </section>
 
@@ -218,6 +255,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
