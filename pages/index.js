@@ -1,9 +1,40 @@
 import Loader from "@/components/Loader";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import * as THREE from "three";
+import HALO from "vanta/dist/vanta.halo.min";
 
 export default function Home() {
+  const vantaRef = useRef(null);
+  const [vantaEffect, setVantaEffect] = useState(null);
+
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        HALO({
+          el: vantaRef.current,
+          THREE,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          baseColor: 0x11a9f,
+          backgroundColor: 0x30f51,
+          amplitudeFactor: 0.2,
+          xOffset: 0.05,
+          yOffset: 0.05,
+          size: 1.7,
+          backgroundColor: 0x1e1e2f,
+          baseColor: 0x6745,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
 
   return (
     <motion.div
@@ -57,7 +88,10 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex flex-col md:flex-row items-center justify-center h-screen px-6 overflow-hidden pt-24">
+      <section
+        ref={vantaRef}
+        className="relative flex flex-col md:flex-row items-center justify-center h-screen px-6 overflow-hidden pt-24 text-white"
+      >
         {/* Background Gradient Animation */}
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 animate-gradient-x opacity-20"></div>
 
