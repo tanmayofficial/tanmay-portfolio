@@ -138,139 +138,197 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="px-6 py-20 bg-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">About Me</h2>
-          <p className="text-lg leading-relaxed text-gray-300">
-            With over 5 years of total and over 2 years of experience as a
-            Software Developer, I have a strong background in website and
-            software development. I'm proficient in HTML, CSS, JavaScript,
-            React.js, Node.js, and familiar with Figma, Adobe Premiere Pro,
-            Adobe Photoshop, etc. I am passionate about building impactful
-            digital experiences and continuously learning new technologies.
+      <section
+        id="about"
+        className="min-h-screen bg-gray-800 flex items-center justify-center px-6"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="max-w-4xl text-center"
+        >
+          <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
+          <p className="text-md text-gray-300 leading-relaxed">
+            I'm a Frontend Developer with a strong command of{" "}
+            <strong>React.js</strong>,<strong>RESTful APIs</strong>,
+            <strong>Code Debugging</strong>,<strong>JavaScript</strong>,
+            <strong>HTML/CSS</strong>, <strong>Redux</strong>,
+            <strong>Tailwind CSS</strong>, <strong>Material-UI</strong>,
+            <strong>Kendo-UI</strong>, focused on building responsive, modern,
+            and user-friendly web applications. While my core strength lies in
+            frontend engineering, I also have basic knowledge of backend
+            technologies like <strong>Node.js</strong>,{" "}
+            <strong>Express.js</strong>,<strong>MongoDB</strong>, and{" "}
+            <strong>MySQL</strong>, allowing me to contribute effectively across
+            the stack.
+            <br />
+            <br />I have hands-on experience with tools and platforms like{" "}
+            <strong>Git</strong>,<strong>GitHub</strong>,
+            <strong>GitLab CI/CD</strong>,<strong>Azure DevOps</strong>, and{" "}
+            <strong>Code Deploy</strong>. I'm also familiar with{" "}
+            <strong>Next.js</strong> for server-rendered React apps, and have
+            foundational knowledge in <strong>C</strong> and{" "}
+            <strong>C++</strong>, which helps me understand problem-solving and
+            logic at a lower level.
+            <br />
+            <br />
+            At <strong>TDR Softwares</strong>, I worked closely with both
+            clients and developers — gathering requirements, leading product
+            demos, and creating both technical and user-focused documentation.
+            At <strong>Entiovi Technologies</strong>, I built and maintained
+            scalable web apps, supported sprint planning, and participated in
+            pre-sales technical support and training.
+            <br />
+            <br />
+            My professional journey also includes a solid foundation in{" "}
+            <strong>Sales & Marketing</strong> through roles at{" "}
+            <strong>Nikon India</strong>, <strong>Kent RO Systems</strong>, and
+            the <strong>Narayana Group</strong>. These experiences sharpened my
+            communication and client handling skills — something I bring into
+            every technical discussion today.
+            <br />
+            <br />I take pride in being a solution-oriented developer who can
+            bridge technical execution with real-world user needs. I'm
+            passionate about clean design, team collaboration, and creating
+            software that delivers real impact.
           </p>
-        </div>
+        </motion.div>
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="px-6 py-20 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-10">Skills</h2>
+      <section
+        id="skills"
+        className="min-h-screen bg-gray-900 flex items-center justify-center px-6"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          // viewport={{ once: true }}
+          className="max-w-5xl text-center"
+        >
+          <h2 className="text-4xl font-bold mb-10 text-white">Skills</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              HTML
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              CSS
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              JavaScript
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              React.js
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              Node.js
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              Express.js
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              MongoDB
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              MySQL
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              Tailwind CSS
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              Bootstrap
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              Git
-            </div>
-            <div className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition">
-              GitHub/GitLab
-            </div>
+            {[
+              "HTML",
+              "CSS",
+              "JavaScript",
+              "React.js",
+              "Node.js",
+              "Express.js",
+              "MongoDB",
+              "MySQL",
+              "Tailwind CSS",
+              "Bootstrap",
+              "Git",
+              "GitHub/GitLab",
+            ].map((skill, index) => {
+              // Determine direction
+              const directions = [
+                { x: -50, y: 0 },
+                { x: 50, y: 0 },
+                { x: 0, y: -50 },
+                { x: 0, y: 50 },
+              ];
+              const direction = directions[index % directions.length];
+
+              return (
+                <motion.div
+                  key={skill}
+                  initial={{ opacity: 0, ...direction }}
+                  whileInView={{ opacity: 1, x: 0, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  // viewport={{ once: true }}
+                  className="p-4 bg-gray-800 rounded shadow hover:shadow-lg transition"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  {skill}
+                </motion.div>
+              );
+            })}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="px-6 py-20 bg-gray-800">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-10">Projects</h2>
+      <section
+        id="projects"
+        className="min-h-screen bg-gray-800 flex items-center justify-center px-6"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="max-w-6xl text-center w-full"
+        >
+          <h2 className="text-4xl font-bold mb-10 text-white">Projects</h2>
           <div className="grid gap-8 md:grid-cols-2">
-            {/* Project 1: Bulkmatic Solutions */}
-            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
-              <h3 className="text-2xl font-semibold mb-4">
-                Bulkmatic Solutions
-              </h3>
-              <p className="text-gray-300 mb-4">
-                Spearheaded the development of a dynamic Planning Board & Admin
-                Dashboard for order and tankwash management. Used React.js,
-                Node.js, PostgreSQL, Kendo UI, Material UI, and more.
-              </p>
-              <span className="text-sm text-gray-400">Jan 2023 - Oct 2023</span>
-            </div>
-
-            {/* Project 2: Wine App */}
-            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
-              <h3 className="text-2xl font-semibold mb-4">Wine App</h3>
-              <p className="text-gray-300 mb-4">
-                Developed a robust Admin Dashboard for liquor/wine management
-                system. Managed functionalities for admins, distributors, and
-                suppliers using React.js, MongoDB, AWS, Material UI, and
-                Express.js.
-              </p>
-              <span className="text-sm text-gray-400">
-                Sept 2022 - Oct 2023
-              </span>
-            </div>
-
-            {/* Project 3: ClearedTalent */}
-            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
-              <h3 className="text-2xl font-semibold mb-4">ClearedTalent</h3>
-              <p className="text-gray-300 mb-4">
-                Contributed to a robust Admin Dashboard for a Recruitment
-                Organization at ClearedTalent. Managed functionalities for
-                customers, agencies, clients, and public-specific test cases,
-                ensuring an efficient user experience. Utilized a tech stack
-                including React.js, Mongoose, Azure Functions, MySQL, Sequelize,
-                Kendo UI, and more.
-              </p>
-              <span className="text-sm text-gray-400">
-                Sept 2022 - Oct 2023
-              </span>
-            </div>
-
-            {/* Project 4: Pathology Lab */}
-            <div className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg transition text-left">
-              <h3 className="text-2xl font-semibold mb-4">Pathology Lab</h3>
-              <p className="text-gray-300 mb-4">
-                Worked on the frontend development of a Pathology Lab
-                application. Built dynamic user interfaces using React.js,
-                React-Router-DOM, Context API, CSS3, Tailwind CSS, Material UI,
-                and other frontend libraries. Focused on creating a clean,
-                responsive, and user-friendly experience for lab management and
-                patient reports.
-              </p>
-              <span className="text-sm text-gray-400">Dec 2024 - Mar 2025</span>
-            </div>
+            {[
+              {
+                title: "Bulkmatic Solutions",
+                description:
+                  "Spearheaded development of a dynamic Planning Board & Admin Dashboard for order and tankwash management. Used React.js, Node.js, PostgreSQL, Kendo UI, Material UI, and more.",
+                time: "Jan 2023 - Oct 2023",
+              },
+              {
+                title: "Wine App",
+                description:
+                  "Developed a robust Admin Dashboard for liquor/wine management. Managed functionalities for admins, distributors, and suppliers using React.js, MongoDB, AWS, Material UI, and Express.js.",
+                time: "Sept 2022 - Oct 2023",
+              },
+              {
+                title: "ClearedTalent",
+                description:
+                  "Contributed to a Recruitment Dashboard for customers, agencies, and clients. Built with React.js, Mongoose, Azure Functions, MySQL, Sequelize, and Kendo UI.",
+                time: "Sept 2022 - Oct 2023",
+              },
+              {
+                title: "Pathology Lab",
+                description:
+                  "Built the frontend for a lab system using React.js, Node.js, Express.js, MongoDB, Tailwind CSS, and Material UI. Focused on responsive, clean UX.",
+                time: "Dec 2024 - Mar 2025",
+              },
+            ].map((proj, i) => (
+              <motion.div
+                key={proj.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                viewport={{ amount: 1 }}
+                className="bg-gray-900 p-6 rounded-lg shadow hover:shadow-lg text-left"
+              >
+                <h3 className="text-2xl font-semibold mb-4 text-white">
+                  {proj.title}
+                </h3>
+                <p className="text-gray-300 mb-4">{proj.description}</p>
+                <span className="text-sm text-gray-400">{proj.time}</span>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-6 py-20 bg-gray-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-10">Contact Me</h2>
-          <p className="text-lg text-gray-300 mb-6">
-            Feel free to reach out if you want to collaborate or have any
-            questions!
+      <section
+        id="contact"
+        className="bg-gray-900 flex items-center justify-center px-6 py-20"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: 0 }}
+          whileInView={{ opacity: 1, x: 10 }}
+          transition={{ duration: 1 }}
+          viewport={{ amount: 0 }}
+          className="text-center w-full"
+        >
+          <h2 className="text-4xl font-bold mb-8 text-white">Contact Me</h2>
+          <p className="text-lg text-gray-300 mb-10">
+            Feel free to reach out if you'd like to collaborate or just say
+            hello!
           </p>
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center flex-wrap gap-6">
             <a
               href="mailto:tanmaypaulofficial@gmail.com"
               className="px-6 py-2 bg-gray-800 rounded hover:bg-gray-700 transition"
@@ -294,7 +352,7 @@ export default function Home() {
               GitHub
             </a>
           </div>
-        </div>
+        </motion.div>
       </section>
     </motion.div>
   );
