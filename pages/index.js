@@ -5,10 +5,13 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import HALO from "vanta/dist/vanta.halo.min";
 import Image from "next/image";
+import { useState as useToggle } from "react"
 
 export default function Home() {
   const vantaRef = useRef(null);
   const [vantaEffect, setVantaEffect] = useState(null);
+  const [menuOpen, setMenuOpen] = useToggle(false);
+
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -62,30 +65,74 @@ export default function Home() {
       </Head>
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-5 bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-10">
-        <h1 className="text-xl font-bold">Tanmay Paul</h1>
-        <ul className="flex space-x-5">
-          <li>
-            <a href="#about" className="hover:text-gray-400">
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="hover:text-gray-400">
-              Skills
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className="hover:text-gray-400">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-gray-400">
-              Contact
-            </a>
-          </li>
-        </ul>
+      <nav className="p-5 bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-10">
+        <div className="flex justify-between items-center">
+          <h1 className="text-xl font-bold">Tanmay Paul</h1>
+          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d={
+                  menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"
+                }
+              />
+            </svg>
+          </button>
+          <ul className="hidden md:flex space-x-5">
+            <li>
+              <a href="#about" className="hover:text-gray-400">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="hover:text-gray-400">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="hover:text-gray-400">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="hover:text-gray-400">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+        {menuOpen && (
+          <ul className="flex flex-col mt-4 space-y-2 md:hidden">
+            <li>
+              <a href="#about" className="block hover:text-gray-400">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#skills" className="block hover:text-gray-400">
+                Skills
+              </a>
+            </li>
+            <li>
+              <a href="#projects" className="block hover:text-gray-400">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a href="#contact" className="block hover:text-gray-400">
+                Contact
+              </a>
+            </li>
+          </ul>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -108,17 +155,16 @@ export default function Home() {
             />
           </div>
 
-          {/* Text Section */}
-          <div className="text-center md:text-left">
-            <h2 className="text-4xl font-bold flex items-center justify-center md:justify-start">
+          <div className="flex flex-col items-center md:items-start">
+            <h2 className="text-3xl sm:text-4xl font-bold flex items-center">
               Hi, I&apos;m Tanmay Paul
               <span className="ml-3 animate-wave">👋</span>
             </h2>
 
-            <p className="text-lg mt-4">
+            <p className="text-md sm:text-lg mt-4">
               Software Developer | React | Node | JavaScript
             </p>
-            <div className="mt-6 flex justify-center md:justify-start space-x-4">
+            <div className="mt-6 flex flex-wrap justify-center md:justify-start gap-4">
               <a
                 href="https://github.com/tanmayofficial"
                 target="_blank"
@@ -143,7 +189,7 @@ export default function Home() {
       {/* About Section */}
       <section
         id="about"
-        className="min-h-screen bg-gray-800 flex items-center justify-center px-6"
+        className="min-h-screen bg-gray-800 flex items-center justify-center px-6 py-7"
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -258,7 +304,7 @@ export default function Home() {
       {/* Projects Section */}
       <section
         id="projects"
-        className="min-h-screen bg-gray-800 flex items-center justify-center px-6"
+        className="min-h-screen bg-gray-800 flex items-center justify-center px-6 py-7"
       >
         <motion.div
           initial={{ opacity: 0, y: 50 }}
