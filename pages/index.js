@@ -1,8 +1,10 @@
 import Loader from "@/components/Loader";
 import Head from "next/head";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -28,7 +30,7 @@ export default function Home() {
       </Head>
 
       {/* Navbar */}
-      <nav className="flex justify-between items-center p-5 bg-gray-800">
+      <nav className="flex justify-between items-center p-5 bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-10">
         <h1 className="text-xl font-bold">Tanmay Paul</h1>
         <ul className="flex space-x-5">
           <li>
@@ -55,43 +57,48 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center h-screen px-6 bg-gray-900 text-white">
-        {/* Image Section */}
-        <div className="mb-8 md:mb-0 md:mr-12">
-          <img
-            src="/meatclg.jpg"
-            alt="Tanmay Paul"
-            className="rounded-full w-48 h-48 object-contain border-4 border-gray-700 bg-white transform transition-transform duration-500 hover:scale-110"
-          />
-        </div>
+      <section className="relative flex flex-col md:flex-row items-center justify-center h-screen px-6 overflow-hidden pt-24">
+        {/* Background Gradient Animation */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-blue-500 animate-gradient-x opacity-20"></div>
 
-        {/* Text Section */}
-        <div className="text-center md:text-left">
-          <h2 className="text-4xl font-bold flex items-center justify-center md:justify-start">
-            Hi, I'm Tanmay Paul
-            <span className="ml-3 animate-wave">👋</span>
-          </h2>
+        <div className="flex flex-col md:flex-row items-center">
+          {/* Image Section */}
+          <div className="mb-8 md:mb-0 md:mr-12">
+            <img
+              src="/meatclg.jpg"
+              alt="Tanmay Paul"
+              className="rounded-full w-48 h-48 object-contain border-4 border-gray-700 bg-white transform transition-transform duration-500 hover:scale-110"
+            />
+          </div>
 
-          <p className="text-lg mt-4">
-            Software Developer | React | Node | JavaScript
-          </p>
-          <div className="mt-6 flex justify-center md:justify-start space-x-4">
-            <a
-              href="https://github.com/tanmayofficial"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/tanmaypaul95/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
-            >
-              LinkedIn
-            </a>
+          {/* Text Section */}
+          <div className="text-center md:text-left">
+            <h2 className="text-4xl font-bold flex items-center justify-center md:justify-start">
+              Hi, I'm Tanmay Paul
+              <span className="ml-3 animate-wave">👋</span>
+            </h2>
+
+            <p className="text-lg mt-4">
+              Software Developer | React | Node | JavaScript
+            </p>
+            <div className="mt-6 flex justify-center md:justify-start space-x-4">
+              <a
+                href="https://github.com/tanmayofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tanmaypaul95/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gray-700 rounded hover:bg-gray-600"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </section>
