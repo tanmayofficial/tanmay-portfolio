@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import HALO from "vanta/dist/vanta.halo.min";
+import Image from "next/image";
 
 export default function Home() {
   const vantaRef = useRef(null);
@@ -62,7 +63,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="flex justify-between items-center p-5 bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-10">
-        <h1 className="text-xl font-bold">DD Paul</h1>
+        <h1 className="text-xl font-bold">Tanmay Paul</h1>
         <ul className="flex space-x-5">
           <li>
             <a href="#about" className="hover:text-gray-400">
@@ -98,8 +99,10 @@ export default function Home() {
         <div className="flex flex-col md:flex-row items-center">
           {/* Image Section */}
           <div className="mb-8 md:mb-0 md:mr-12">
-            <img
+            <Image
               src="/meatclg.jpg"
+              width={192}
+              height={192}
               alt="Tanmay Paul"
               className="rounded-full w-48 h-48 object-contain border-4 border-gray-700 bg-white transform transition-transform duration-500 hover:scale-110"
             />
@@ -108,7 +111,7 @@ export default function Home() {
           {/* Text Section */}
           <div className="text-center md:text-left">
             <h2 className="text-4xl font-bold flex items-center justify-center md:justify-start">
-              Hi, I'm Tanmay Paul
+              Hi, I&apos;m Tanmay Paul
               <span className="ml-3 animate-wave">👋</span>
             </h2>
 
@@ -151,7 +154,7 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
           <p className="text-md text-gray-300 leading-relaxed">
-            I'm a Frontend Developer with a strong command of{" "}
+            I&apos;m a Frontend Developer with a strong command of{" "}
             <strong>React.js</strong>,<strong>RESTful APIs</strong>,
             <strong>Code Debugging</strong>,<strong>JavaScript</strong>,
             <strong>HTML/CSS</strong>, <strong>Redux</strong>,
@@ -167,7 +170,7 @@ export default function Home() {
             <br />I have hands-on experience with tools and platforms like{" "}
             <strong>Git</strong>,<strong>GitHub</strong>,
             <strong>GitLab CI/CD</strong>,<strong>Azure DevOps</strong>, and{" "}
-            <strong>Code Deploy</strong>. I'm also familiar with{" "}
+            <strong>Code Deploy</strong>. I&apos;m also familiar with{" "}
             <strong>Next.js</strong> for server-rendered React apps, and have
             foundational knowledge in <strong>C</strong> and{" "}
             <strong>C++</strong>, which helps me understand problem-solving and
@@ -190,7 +193,7 @@ export default function Home() {
             every technical discussion today.
             <br />
             <br />I take pride in being a solution-oriented developer who can
-            bridge technical execution with real-world user needs. I'm
+            bridge technical execution with real-world user needs. I&apos;m
             passionate about clean design, team collaboration, and creating
             software that delivers real impact.
           </p>
@@ -325,7 +328,7 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold mb-8 text-white">Contact Me</h2>
           <p className="text-lg text-gray-300 mb-10">
-            Feel free to reach out if you'd like to collaborate or just say
+            Feel free to reach out if you&apos;d like to collaborate or just say
             hello!
           </p>
           <div className="flex justify-center flex-wrap gap-6">
