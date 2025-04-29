@@ -62,7 +62,7 @@ export default function Home() {
 
       {/* Navbar */}
       <nav className="flex justify-between items-center p-5 bg-transparent backdrop-blur-md fixed top-0 left-0 right-0 z-10">
-        <h1 className="text-xl font-bold">Tanmay Paul</h1>
+        <h1 className="text-xl font-bold">DD Paul</h1>
         <ul className="flex space-x-5">
           <li>
             <a href="#about" className="hover:text-gray-400">
