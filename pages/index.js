@@ -5,13 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import HALO from "vanta/dist/vanta.halo.min";
 import Image from "next/image";
-import { useState as useToggle } from "react"
+import { useState as useToggle } from "react";
 
 export default function Home() {
   const vantaRef = useRef(null);
   const [vantaEffect, setVantaEffect] = useState(null);
   const [menuOpen, setMenuOpen] = useToggle(false);
-
 
   useEffect(() => {
     if (!vantaEffect) {
@@ -147,7 +146,7 @@ export default function Home() {
           {/* Image Section */}
           <div className="mb-8 md:mb-0 md:mr-12">
             <Image
-              src="/meatclg.jpg"
+              src="/my_pic.jpg"
               width={192}
               height={192}
               alt="Tanmay Paul"
@@ -200,7 +199,7 @@ export default function Home() {
         >
           <h2 className="text-4xl font-bold mb-6 text-white">About Me</h2>
           <p className="text-md text-gray-300 leading-relaxed">
-            I&apos;m a Frontend Developer with a strong command of{" "}
+            I&apos;m a Software Developer with a strong command of{" "}
             <strong>React.js</strong>,<strong>RESTful APIs</strong>,
             <strong>Code Debugging</strong>,<strong>JavaScript</strong>,
             <strong>HTML/CSS</strong>, <strong>Redux</strong>,
@@ -209,13 +208,12 @@ export default function Home() {
             and user-friendly web applications. While my core strength lies in
             frontend engineering, I also have basic knowledge of backend
             technologies like <strong>Node.js</strong>,{" "}
-            <strong>Express.js</strong>,<strong>MongoDB</strong>, and{" "}
-            <strong>MySQL</strong>, allowing me to contribute effectively across
-            the stack.
+            <strong>Express.js</strong>,<strong>MongoDB</strong>, and
+            SQL(basics), allowing me to contribute effectively across the stack.
             <br />
             <br />I have hands-on experience with tools and platforms like{" "}
-            <strong>Git</strong>,<strong>GitHub</strong>,
-            <strong>GitLab CI/CD</strong>,<strong>Azure DevOps</strong>, and{" "}
+            <strong>Git</strong>,<strong>GitHub</strong>,<strong>GitLab</strong>
+            ,<strong>Azure</strong>, <strong>AWS S3</strong> and{" "}
             <strong>Code Deploy</strong>. I&apos;m also familiar with{" "}
             <strong>Next.js</strong> for server-rendered React apps, and have
             foundational knowledge in <strong>C</strong> and{" "}
@@ -268,9 +266,9 @@ export default function Home() {
               "Node.js",
               "Express.js",
               "MongoDB",
-              "MySQL",
+              "SQL(basics)",
               "Tailwind CSS",
-              "Bootstrap",
+              "AWS S3",
               "Git",
               "GitHub/GitLab",
             ].map((skill, index) => {
@@ -320,13 +318,13 @@ export default function Home() {
                 title: "Bulkmatic Solutions",
                 description:
                   "Spearheaded development of a dynamic Planning Board & Admin Dashboard for order and tankwash management. Used React.js, Node.js, PostgreSQL, Kendo UI, Material UI, and more.",
-                time: "Jan 2023 - Oct 2023",
+                time: "Sept 2022 - Oct 2023",
               },
               {
                 title: "Wine App",
                 description:
                   "Developed a robust Admin Dashboard for liquor/wine management. Managed functionalities for admins, distributors, and suppliers using React.js, MongoDB, AWS, Material UI, and Express.js.",
-                time: "Sept 2022 - Oct 2023",
+                time: "Jan 2023 - Oct 2023",
               },
               {
                 title: "ClearedTalent",
@@ -335,10 +333,10 @@ export default function Home() {
                 time: "Sept 2022 - Oct 2023",
               },
               {
-                title: "Pathology Lab",
+                title: "Music App",
                 description:
-                  "Built the frontend for a lab system using React.js, Node.js, Express.js, MongoDB, Tailwind CSS, and Material UI. Focused on responsive, clean UX.",
-                time: "Dec 2024 - Mar 2025",
+                  "Built the end to end application for a music app using React.js, Redux, Node.js, Express.js, CSS, AWS S3, and SQLite/libsql. Focused on responsive, clean UX.",
+                time: "Mar 2025 - Aug 2025",
               },
             ].map((proj, i) => (
               <motion.div
